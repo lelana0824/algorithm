@@ -3,11 +3,7 @@ function solution(participant, completion) {
   const c = completion.sort();
 
   for (let i = 0; i < p.length; i++) {
-    if (p[i] !== c[i]) {
-      continue
-    } else {
-      
-    }
+    if (p[i] !== c[i]) return p[i]
   }
 }
 
