@@ -29,29 +29,28 @@ function solution(participant, completion) {
 
 
 function solution(participant, completion) {
-  const hash = {};
+  const solutionMap = {};
 
   for (let i = 0; i < completion.length; i++) {
-    if (!hash[completion[i]]) {
-      hash[completion[i]] = 1
+    if (!solutionMap[completion[i]]) {
+      solutionMap[completion[i]] = 1
     } else {
-      hash[completion[i]] = hash[completion[i]] + 1
+      solutionMap[completion[i]] = solutionMap[completion[i]] + 1
     }
   }
 
   for (let i = 0; i < participant.length; i++) {
-    if (!hash[participant[i]]) {
+    if (!solutionMap[participant[i]]) {
       return participant[i];
     } else {
-      if (hash[participant[i]] === 0) {
+      if (solutionMap[participant[i]] === 0) {
         return participant[i];
       } else {
-        hash[participant[i]] = hash[participant[i]] - 1
+        solutionMap[participant[i]] = solutionMap[participant[i]] - 1
       }
     }
   }
 }
 
-console.log(
-  solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])
-);
+// 전체 참가 - ['mislav', 'stanko', 'mislav', 'ana']
+// 완주자 - ['stanko', 'ana', 'mislav']
