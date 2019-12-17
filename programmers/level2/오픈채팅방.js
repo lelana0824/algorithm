@@ -2,6 +2,7 @@ function solution(record) {
   // 닉네임을 객체로 저장해 놓는것이 좋다.
   const nick = {};
   let altered_list = record.map(item => item.split(" "));
+  console.log(altered_list);
   altered_list
     .slice()
     .reverse()
